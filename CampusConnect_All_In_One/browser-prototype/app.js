@@ -1,0 +1,11 @@
+const sample=[{name:'Aarav Kumar',email:'aarav@example.com',branch:'CSE',cgpa:8.4},{name:'Diya Sharma',email:'diya@example.com',branch:'IT',cgpa:8.1},{name:'Ishaan Rao',email:'ishaan@example.com',branch:'ECE',cgpa:7.2}];
+let students=JSON.parse(localStorage.getItem('cc_students')||'null')||sample;
+const $=id=>document.getElementById(id);
+function render(){ $('studentRows').innerHTML=students.map(s=>`<tr><td>${escapeHtml(s.name)}</td><td>${escapeHtml(s.email)}</td><td>${escapeHtml(s.branch)}</td><td>${Number(s.cgpa).toFixed(2)}</td></tr>`).join('');$('studentCount').textContent=students.length;$('studentSelect').innerHTML=students.map((s,i)=>`<option value="${i}">${escapeHtml(s.name)} (${s.cgpa})</option>`).join('');}
+function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function show(page){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('hidden',p.id!==page));document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b.dataset.page===page));$('heading').textContent=({dashboard:'Dashboard',students:'Students',drives:'Placement Drives',applications:'Applications'})[page];}
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.page)));
+document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.goto)));
+$('studentForm').addEventListener('submit',e=>{e.preventDefault();const s={name:$('name').value.trim(),email:$('email').value.trim().toLowerCase(),branch:$('branch').value.trim().toUpperCase(),cgpa:Number($('cgpa').value)};if(!s.name||!s.email||!s.branch||s.cgpa<0||s.cgpa>10)return alert('Enter valid details. CGPA must be between 0 and 10.');if(students.some(x=>x.email.toLowerCase()===s.email))return alert('This email is already registered.');students.push(s);localStorage.setItem('cc_students',JSON.stringify(students));e.target.reset();render();alert('Student registered successfully.');});
+$('checkEligibility').addEventListener('click',()=>{const s=students[Number($('studentSelect').value)],min=Number($('driveSelect').value);$('eligibilityResult').textContent=s.cgpa>=min?`${s.name} meets the minimum CGPA criterion (${s.cgpa} ≥ ${min}).`:`${s.name} does not meet the minimum CGPA criterion (${s.cgpa} < ${min}).`;});
+render();

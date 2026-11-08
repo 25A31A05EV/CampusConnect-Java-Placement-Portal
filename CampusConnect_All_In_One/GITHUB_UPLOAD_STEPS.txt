@@ -1,0 +1,14 @@
+# GitHub upload using your browser (no Git installation needed)
+
+1. Sign in at https://github.com
+2. Click the **+** button → **New repository**.
+3. Repository name: `CampusConnect-Java-Placement-Portal`
+4. Choose **Public** (if your lecturer needs to view it) and click **Create repository**.
+5. Open the extracted `CampusConnect_All_In_One` folder on your computer.
+6. On the empty GitHub repository page, choose **Add file → Upload files**.
+7. Drag the contents of the `CampusConnect_All_In_One` folder into the upload area. Upload the folders `docs`, `browser-prototype`, `java-source` and the root `README.md`.
+8. Scroll down to **Commit changes**.
+9. Commit message: `Add CampusConnect project documentation and prototype`
+10. Click **Commit changes**.
+
+Important: Do not upload only the ZIP file if you want GitHub to display the source files. Extract it first, then upload the extracted folder contents. GitHub's web uploader may require selecting files/folders in batches. If folder drag-and-drop does not work, open each folder and upload its files separately, preserving the folder structure.

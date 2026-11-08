@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+<rect width="1000" height="760" fill="#f8fafc"/>
+<g font-family="Arial" text-anchor="middle" fill="#0f172a" stroke="#334155" stroke-width="2">
+<rect x="390" y="25" width="220" height="58" rx="28" fill="#dbeafe"/><text x="500" y="61" stroke="none" font-size="22">START</text>
+<rect x="350" y="130" width="300" height="65" rx="12" fill="#e0f2fe"/><text x="500" y="169" stroke="none" font-size="20">Open CampusConnect</text>
+<rect x="350" y="245" width="300" height="65" rx="12" fill="#e0f2fe"/><text x="500" y="284" stroke="none" font-size="20">Choose a module</text>
+<polygon points="500,360 650,430 500,500 350,430" fill="#fef3c7"/><text x="500" y="425" stroke="none" font-size="18">Input valid?</text>
+<rect x="65" y="395" width="205" height="70" rx="12" fill="#fee2e2"/><text x="167" y="437" stroke="none" font-size="18">Show error</text>
+<rect x="365" y="565" width="270" height="65" rx="12" fill="#dcfce7"/><text x="500" y="604" stroke="none" font-size="20">Save / update record</text>
+<rect x="390" y="675" width="220" height="58" rx="28" fill="#dbeafe"/><text x="500" y="711" stroke="none" font-size="22">END</text>
+<g fill="none" stroke="#334155" stroke-width="2.5" marker-end="url(#a)">
+<path d="M500 83 V130"/><path d="M500 195 V245"/><path d="M500 310 V360"/><path d="M350 430 H270"/><path d="M500 500 V565"/><path d="M500 630 V675"/>
+<path d="M167 395 V350 H300 V278 H350"/>
+</g>
+</g>
+<g font-family="Arial" font-size="17" fill="#334155"><text x="520" y="535">Yes</text><text x="285" y="415">No</text></g>
+</svg>
